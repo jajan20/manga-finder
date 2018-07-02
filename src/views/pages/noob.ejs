@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Noob</title>
+	<link rel="stylesheet" href="css/style.css"> 
+
+	</head>
+	<body>
+		<a href="/">Return</a>
+		<h1>Manga Finder</h1>
+		<h2>Short lesson about Manga</h2>
+		<p>In Japan, people of all ages read manga. The medium includes works in a broad range of genres: action-adventure, business, comedy and detective among others. Many manga are translated into other languages. Since the 1950s, manga has steadily become a major part of the Japanese publishing industry.</p>
+		
+		<h2>So you're looking for your first Manga?</h2>
+		<button>Something epic like Avatar: The last Airbender</button>
+		<button>Space Western (Firefly, Guardians of the Galaxy)</button>
+		<button>Crime, Drama & Mindgames</button>
+
+		<ul>
+			<% for (let i = 0; i < data.length; i++) { %> 
+				<article>
+					<li class="manga-title"><%= data[i].t %></li>
+					<p><strong>MangaID: </strong><%= data[i].i %></p>
+					<ol>
+						<% for (let j = 0; j < data[i].c.length; j++) { %>
+							<li><a href=""><%= data[i].c[j] %><a></li>
+						<% } %>
+					</ol>
+				</article>
+			<% } %>
+		</ul>
+
+
+
+		<a href="">Read these already or need something different?</a>
+
+		<!-- <script src="./js/script.js"></script> -->
+	</body>
+</html>
