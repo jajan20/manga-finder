@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en" class="no-js">
 	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Noob</title>
-	<link rel="stylesheet" href="css/style.css"> 
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Western</title>
+		<link rel="stylesheet" href="css/style.css"> 
 	</head>
 	<body>
 		<a href="/">Return</a>
@@ -13,7 +13,7 @@
 			<h1>Manga Finder</h1>
 			<h2>Short lesson about Manga</h2>
 			<p>In Japan, people of all ages read manga. The medium includes works in a broad range of genres: action-adventure, business, comedy and detective among others. Many manga are translated into other languages. Since the 1950s, manga has steadily become a major part of the Japanese publishing industry.</p>
-			<h2>So you're looking for your first Manga?</h2>
+			<h2>Western Cowboy ;)</h2>
 		</section>
 		<section class="btn-container">
 			<a href="/avatar">Something epic like Avatar: The Last Airbender</a>
@@ -21,15 +21,15 @@
 			<a href="/crime">Crime, Drama & Mindgames</a>
 		</section>
 		<section class="manga">
-		<% for (let i = 0; i < data.length; i++) { %> 
+			<% for (let i = 0; i < data.length; i++) { %> 
 				<article class="manga-container">
 					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
 					<div class="meta-container">
 						<span class="manga-title"><%= data[i].t %></span>
 						<ol>
-							<% for (let j = 0; j < data[i].c.length; j++) { %>
-								<li><a href=""><%= data[i].c[j] %></a></li>
-							<% } %>
+						<% for (let j = 0; j < data[i].c.length; j++) { %>
+							<li><a href=""><%= data[i].c[j] %></a></li>
+						<% } %>
 						</ol>
 					</div>
 				</article>
@@ -38,6 +38,5 @@
 		<footer>
 			<a href="">Read these already or need something different?</a>
 		</footer>
-		<!-- <script src="./js/script.js"></script> -->
 	</body>
 </html>
