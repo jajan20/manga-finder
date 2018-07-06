@@ -40,13 +40,13 @@ app.use(express.static(__dirname + '/public'))
 		if (err) {
 			console.log(err)
 		} else {
-			let filterGenre = ['Shounen', 'Fantasy', 'Romance', 'Adventure']
+			let filterGenre = ['Shounen']
 			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
 			let filterImg = avatarManga.filter(function(image) {
   				return image.im != null && image.c.length > 0 
 			})
 			// console.log(data.manga[1].c.filter(x => x.manga[1].c.every(g => filter.includes(g))))
-			console.log(filterImg)
+			// console.log(filterImg)
 			res.render('pages/avatar', { data: filterImg })
 		}
 	})
@@ -57,13 +57,13 @@ app.use(express.static(__dirname + '/public'))
 		if (err) {
 			console.log(err)
 		} else {
-			let filterGenre = ['Drama', 'Shounen', 'Tragedy']
+			let filterGenre = ['Psychological', 'Mystery', 'Mystery', 'Drama']
 			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
 			let filterImg = avatarManga.filter(function(image) {
   				return image.im != null && image.c.length > 0 
 			})
 			// console.log(data.manga[1].c.filter(x => x.manga[1].c.every(g => filter.includes(g))))
-			console.log(filterImg)
+			// console.log(filterImg)
 			res.render('pages/crime', { data: filterImg })
 		}
 	})
@@ -74,13 +74,13 @@ app.use(express.static(__dirname + '/public'))
 		if (err) {
 			console.log(err)
 		} else {
-			let filterGenre = ['Sci-fi', 'Comedy', 'Action']
+			let filterGenre = ['Sci-fi', 'Comedy', 'Adventure']
 			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
 			let filterImg = avatarManga.filter(function(image) {
   				return image.im != null && image.c.length > 0 
 			})
 			// console.log(data.manga[1].c.filter(x => x.manga[1].c.every(g => filter.includes(g))))
-			console.log(filterImg)
+			// console.log(filterImg)
 			res.render('pages/western', { data: filterImg })
 		}
 	})

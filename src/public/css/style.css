@@ -5,6 +5,13 @@
 	font-family: 'PT Sans', sans-serif;
 }
 
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .information-container {
 	display: flex;
 	flex-direction: column;
@@ -12,6 +19,65 @@
 
 .information-container {
 	width: 80vw;
+}
+
+.manga {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	margin: 0 0 4rem 0;
+}
+
+.manga-container {
+	display: flex;
+	flex-direction: column;
+	overflow: hidden; 
+	transition: all 300ms;
+	opacity: 0;
+	transform: translateY(20px);
+
+}
+
+.visible {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.meta-container {
+	width:158px;
+	overflow: hidden;
+}
+
+#manga-cover {
+	width: 158px;
+	height: 240px;
+	object-fit: cover;
+}
+
+footer {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	background-color: deepskyblue;
+	height: 3rem;
+	bottom: 0;
+	left: 0;
+	margin: 1rem 0 0 0;
+	box-shadow: 0px -15px 40px 10px #FFFFFF;
+}
+
+footer a {
+	text-decoration: none;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+.noob-btn, .pro-btn {
+	width:  100%;
 }
 
 .btn-container {
@@ -40,46 +106,21 @@
 }
 
 
-.manga {
+
+
+/*==============
+=== PRO PAGE ===
+===============*/
+
+.top-manga-container {
 	display: flex;
-	justify-content: space-around;
 	flex-wrap: wrap;
 }
 
-.manga-container {
+.top-manga-container article {
 	display: flex;
 	flex-direction: column;
-	overflow: hidden; 
-	transition: all 150ms;
-}
-
-.meta-container {
-	width:158px;
-	overflow: hidden;
-}
-
-#manga-cover {
-	width: 158px;
-	height: 240px;
-	object-fit: cover;
-}
-
-footer {
-	width: 100%;
-	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
-	position: fixed;
-	background-color: deepskyblue;
-	height: 3rem;
-	bottom: 0;
-	left: 0;
 }
 
-footer a {
-	text-decoration: none;
-}
-
-footer a:hover {
-	text-decoration: underline;
-}

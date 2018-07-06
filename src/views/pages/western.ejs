@@ -22,6 +22,7 @@
 		</section>
 		<section class="manga">
 			<% for (let i = 0; i < data.length; i++) { %> 
+				<div class="random">
 				<article class="manga-container">
 					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
 					<div class="meta-container">
@@ -33,10 +34,12 @@
 						</ol>
 					</div>
 				</article>
+			</div>
 			<% } %>
 		</section>
 		<footer>
 			<a href="">Read these already or need something different?</a>
 		</footer>
+		<script src="js/script.js"></script>
 	</body>
 </html>

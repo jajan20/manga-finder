@@ -22,7 +22,8 @@
 		</section>
 		<section class="manga">
 			<% for (let i = 0; i < data.length; i++) { %> 
-				<article class="manga-container">
+				<div class="random">
+					<article class="manga-container">
 					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
 					<div class="meta-container">
 						<span class="manga-title"><%= data[i].t %></span>
@@ -33,10 +34,12 @@
 						</ol>
 					</div>
 				</article>
+			</div>
 			<% } %>
 		</section>
 		<footer>
 			<a href="">Read these already or need something different?</a>
 		</footer>
+		<script src="js/script.js"></script>
 	</body>
 </html>
