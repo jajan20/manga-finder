@@ -39,3 +39,12 @@ loadContentElement()
 	}
 
 }
+
+// for (let i = 0; i < manga.manga.length; i++){
+// 	let unix = manga.manga[i].ld 
+
+// 	let calc = (manga.manga[i].h/manga.manga[i].ld) * 365
+
+
+// 	if (calc > 0) {console.log(calc)}
+// }

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" class="no-js">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Seinen</title>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+		<section class="manga">
+			<% for (let i = 0; i < data.length; i++) { %> 
+				<div class="random">
+				<article class="manga-container">
+					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
+					<div class="meta-container">
+						<span class="manga-title"><%= data[i].t %></span>
+						<ol>
+							<% for (let j = 0; j < data[i].c.length; j++) { %>
+								<li><a href=""><%= data[i].c[j] %></a></li>
+							<% } %>
+						</ol>
+					</div>
+				</article>
+			</div>
+			<% } %>
+		</section>
+	</body>
+	<script src="js/script.js"></script>
+</html>

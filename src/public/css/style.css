@@ -112,15 +112,58 @@ footer a:hover {
 === PRO PAGE ===
 ===============*/
 
-.top-manga-container {
+.gender-genre {
 	display: flex;
-	flex-wrap: wrap;
 }
 
-.top-manga-container article {
+.male-genre, .female-genre {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
-	align-items: center;
+	margin: 0.5rem;
 }
+
+.male-genre a, .female-genre a {
+	margin: 0.5rem;
+	width: 15rem;
+	text-align: center;
+	text-decoration: none;
+	color: #F44910;
+	border: solid 1px #F44910;
+	padding: 0.4rem;
+	transition: all 150ms;
+
+}
+
+.male-genre a:hover, .female-genre a:hover {
+	background-color: #F44910;
+	color: white;
+	font-weight: 800;
+
+}
+
+
+.genre-selection {
+	display: flex;
+}
+
+.genre-selection label {
+	display: block;
+	text-align: center;
+	font-size: .8rem;
+	color: #F44910;
+	cursor: pointer;
+	box-shadow: inset 0px 0px 0px 1px #F44910;
+	margin: .5rem;
+}
+
+.genre-selection input {
+	visibility: hidden;
+}
+
+.genre-selection input:checked + label {
+	background-color: #F44910;
+	color: white;
+	font-weight: 800;
+}
+
 
