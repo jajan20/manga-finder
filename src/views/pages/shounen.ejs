@@ -78,12 +78,11 @@
 				<div class="random">
 				<article class="manga-container">
 					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
-					<a href="<%= "manga/" + data[i].i %>"><%= data[i].i%></a>
+					<a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a>
 					<div class="meta-container">
-						<span class="manga-title"><%= data[i].t %></span>
 						<ol>
 							<% for (let j = 0; j < data[i].c.length; j++) { %>
-								<li><a href=""><%= data[i].c[j] %></a></li>
+								<li><%= data[i].c[j] %></li>
 							<% } %>
 						</ol>
 					</div>

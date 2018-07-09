@@ -1,5 +1,4 @@
 if ('IntersectionObserver' in window) {
-console.log('Hallo')
 
 const loadContentElement = function() {
 	const contentElements = document.querySelectorAll('.random')
@@ -11,7 +10,6 @@ const loadContentElement = function() {
 	let contentObserver = new IntersectionObserver(function(entries, self) {
 		entries.forEach(entry => {
 			if (entry.isIntersecting) {
-				console.log('in Viewport')
 				preloadContent(entry.target)
 				self.unobserve(entry.target)
 			} 
@@ -39,6 +37,9 @@ loadContentElement()
 	}
 
 }
+
+let genreSelection = document.querySelector('#action')
+console.log(genreSelection)
 
 // for (let i = 0; i < manga.manga.length; i++){
 // 	let unix = manga.manga[i].ld 

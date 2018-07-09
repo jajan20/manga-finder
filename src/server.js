@@ -3,7 +3,6 @@ const session = require('cookie-session')
 const bodyParser = require('body-parser')
 const request = require('request')
 const fetch = require('node-fetch')
-// const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 const app = express()
 
@@ -19,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(session({secret: 'mangafinder'}))
 
 app.use(express.static(__dirname + '/public'))
+app.use('/manga', express.static(__dirname + '/public'))
 
 .get('/', function(req, res) {
 	res.render('pages/index')
@@ -148,16 +148,40 @@ app.use(express.static(__dirname + '/public'))
 
 .get('/manga/:id', function(req, res) {
 	request(allMangaUrl, { json: true }, function(err, response, data) {
-		function lookupManga(req, res, next) {
-			let mangaID = req.params.id
-		}
-
-		// let idURL = `https://www.mangaeden.com/api/manga/${mangaID}`
-		// let mangaID = data.manga.i
-		
-		console.log('test')
-		// res.render('manga/:id', { data: })
+		let mangaID = req.params.id
+		let idURL = `https://www.mangaeden.com/api/manga/${mangaID}`
+		request(idURL, { json: true }, function(err, response, data) {
+			if (err) {
+				console.log(err)
+			} else {
+				console.log(data)
+				res.render('pages/manga', { data: data })
+			}
+		})
 	})
 })
+
+// Experiment to include data inside a previous called request, didn't work
+
+// .get('/test', function(req, res) {
+// 	request(allMangaUrl, { json: true }, function(err, response, manga) {
+// 		// console.log(manga)
+// 		for (let i = 0; i < manga.manga.length; i++) {
+// 			let mangaID = manga.manga[i].i
+// 			let idURL = `https://www.mangaeden.com/api/manga/${mangaID}`
+// 			console.log(idURL)
+// 			request(idURL, { json: true }, function(err, response, data) {
+// 				if (err) {
+// 					console.log(err)
+// 				} else {
+// 				res.render('pages/test', { 
+// 						data: data,
+// 						manga: manga
+// 					})
+// 				}
+// 			})
+// 		}
+// 	})
+// })
 
 .listen(8080, console.log('listening on port 8080'))
