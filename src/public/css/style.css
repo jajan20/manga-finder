@@ -15,20 +15,77 @@
 	font-family: 'PT Sans', sans-serif;
 }
 
-body {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+
+
+/*================
+=== INDEX PAGE ===
+=================*/
+main {
+	margin: 1rem;
 }
 
-.information-container {
-	display: flex;
-	flex-direction: column;
+main h1 {
+	font-family: 'Anton', sans-serif;
 }
 
-.information-container {
-	width: 80vw;
+.index-btn-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	margin: 1rem;
+}
+
+.index-btn-container a {
+	border: solid 1px #F44910;
+	width: 50vw;
+	margin: .5rem 0 0 0;
+	color: #F44910;
+	text-decoration: none;
+	padding: .2rem;
+}
+
+.index-btn-container a:hover {
+	background-color: rgba(244, 73, 16, 0.6);
+	color: white;
+}
+
+
+
+/*==================
+=== AMATEUR PAGE ===
+===================*/
+#amateur-main {
+
+}
+
+#amateur-main p {
+	margin-top: .5rem;
+}
+
+#amateur-content {
+	margin: 1rem;
+}
+
+#amateur-content article{
+	margin: 1rem 0 0 0;
+}
+
+.btn-container {
+	display: flex;
+	text-align: center;
+}
+
+.btn-container a {
+	border: solid 1px #F44910;
+	margin: .5rem .5rem 0 0;
+	color: #F44910;
+	text-decoration: none;
+	padding: .2rem;
+}
+
+.btn-container a:hover {
+	background-color: rgba(244, 73, 16, 0.6);
+	color: white;
 }
 
 .manga {
@@ -68,7 +125,7 @@ body {
 	border: solid 1px black;
 }
 
-footer {
+#amateur-footer {
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -82,50 +139,19 @@ footer {
 	box-shadow: 0px -15px 40px 10px #FFFFFF;
 }
 
-footer a {
+#amateur-footer a {
 	text-decoration: none;
 }
 
-footer a:hover {
+#amateur-footer a:hover {
 	text-decoration: underline;
 }
-
-.noob-btn, .pro-btn {
-	width:  100%;
-}
-
-.btn-container {
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	margin: 1rem 0 1rem 0;
-}
-
-.btn-container button {
-	height: 2rem;
-	padding:.4rem;
-}
-
-.btn-container a {
-	text-decoration: none;
-	color: black;
-	border: solid 1px black;
-	text-align: center;
-	font-size: .8em;
-}
-
-.btn-container a:hover {
-	background-color: black;
-	color: white;
-}
-
 
 
 
 /*==============
 === PRO PAGE ===
 ===============*/
-
 .gender-genre {
 	display: flex;
 }
@@ -154,6 +180,11 @@ footer a:hover {
 	font-weight: 800;
 
 }
+
+#pro-footer {
+	margin: 1rem;
+}
+
 
 
 /*==================
@@ -198,6 +229,12 @@ header label:hover, header label:focus {
 	background-color: rgba(244, 73, 16, 0.6);
 	color: white;
 	transform: scale(1.1);
+}
+
+#genre-btn {
+	border: solid 1px deepskyblue;
+	padding: .2rem;
+	background-color: deepskyblue;
 }
 
 [type="checkbox"] {
