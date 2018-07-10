@@ -1,3 +1,13 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -23,9 +33,12 @@ body {
 
 .manga {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	flex-wrap: wrap;
-	margin: 0 0 4rem 0;
+}
+
+.manga img {
+	margin: 0.2rem;
 }
 
 .manga-container {
@@ -52,6 +65,7 @@ body {
 	width: 158px;
 	height: 240px;
 	object-fit: cover;
+	border: solid 1px black;
 }
 
 footer {
@@ -142,28 +156,70 @@ footer a:hover {
 }
 
 
-.genre-selection {
+/*==================
+=== SHOUNEN PAGE ===
+===================*/
+nav {
+	background-color: #F44910;
+	width: 100%;
 	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 3rem;
+	color: white;
+	font-weight: 800;
 }
 
-.genre-selection label {
+header {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	width: 100%;
+	background-color: #FFFBF4;
+	height:auto;
+}
+
+header label {
 	display: block;
+	width:4.3rem;
 	text-align: center;
 	font-size: .8rem;
 	color: #F44910;
 	cursor: pointer;
 	box-shadow: inset 0px 0px 0px 1px #F44910;
 	margin: .5rem;
+	transition: all 150ms;
 }
 
-.genre-selection input {
+header label:hover, header label:focus {
+	outline: none;
+	background-color: rgba(244, 73, 16, 0.6);
+	color: white;
+	transform: scale(1.1);
+}
+
+[type="checkbox"] {
 	visibility: hidden;
 }
 
-.genre-selection input:checked + label {
+[type="checkbox"]:checked + label {
 	background-color: #F44910;
 	color: white;
 	font-weight: 800;
 }
 
+.item {
+  display: none;
+  animation: fadeOut 300ms;
+}
 
+.item.active {
+  display: block;
+  animation: fadeIn 300ms;
+}
+
+.hidden {
+	display: none;
+}

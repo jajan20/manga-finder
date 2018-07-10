@@ -6,9 +6,11 @@ const fetch = require('node-fetch')
 
 const app = express()
 
-const url = 'https://www.mangaeden.com/api/list/0/?p=1'
-const allMangaUrl = 'https://www.mangaeden.com/api/list/0/?p=1'
+const url = 'https://www.mangaeden.com/api/list/0/?p=1&l=5000'
+const allMangaUrl = 'https://www.mangaeden.com/api/list/0/?p=1&l=5000'
 
+// 'https://www.mangaeden.com/api/list/0/?p=1'
+// 'https://www.mangaeden.com/api/list/0/?p=1&l=5000'
 //'https://www.mangaeden.com/api/list/0/' Original link
 
 app.set('view engine', 'ejs')

@@ -11,19 +11,27 @@
 
 	</head>
 	<body>
-<section class="manga">
+		<nav>
+			<p>SEINEN</p>
+		</nav>
+		<header>
+		</header>
+		<section>
+			<a href="">I want even more genre's!</a>
+		</section>
+		<section class="manga">
 			<% for (let i = 0; i < data.length; i++) { %> 
 				<div class="random">
-				<article class="manga-container">
+				<article class="manga-container item <%= data[i].c[0]%> <%= data[i].c[1]%> <%= data[i].c[2]%>">
 					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
-					<a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a>
-					<div class="meta-container">
+					<!-- <a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a> -->
+					<!-- <div class="meta-container">
 						<ol>
 							<% for (let j = 0; j < data[i].c.length; j++) { %>
 								<li><%= data[i].c[j] %></li>
 							<% } %>
 						</ol>
-					</div>
+					</div> -->
 				</article>
 			</div>
 			<% } %>

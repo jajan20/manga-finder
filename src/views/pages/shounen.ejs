@@ -11,81 +11,29 @@
 
 	</head>
 	<body>
-		<section class="genre-selection">
-			<div>
-				<input type="checkbox" id="action">
-				<label for="action">Action</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="fantasy">
-				<label for="fantasy">Fantasy</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="sci-fi">
-				<label for="sci-fi">Sci-fi</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="adventure">
-				<label for="adventure">Adventure</label>
-			</div>
-
-			<div>
-				<input type="checkbox" id="historical">
-				<label for="historical">Historical</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="mature">
-				<label for="mature">Mature</label>
-			</div>
-
-			<div>
-				<input type="checkbox" id="drama">
-				<label for="drama">Drama</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="horror">
-				<label for="horror">Horror</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="mystery">
-				<label for="mystery">Mystery</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="comedy">
-				<label for="comedy">Comedy</label>
-			</div>
-			
-			<div>
-				<input type="checkbox" id="romance">
-				<label for="romance">Romance</label>
-			</div>
-
-			<div>
-				<input type="checkbox" id="sport">
-				<label for="sport">Sports</label>
-			</div>
-
+		<nav>
+			<p>SHOUNEN</p>
+		</nav>
+		<header>
+		</header>
+		<section id="jap-genre">
+		</section>
+		<section>
+			<button id="genre-btn">Show me more Genre's</button>
 		</section>
 		<section class="manga">
 			<% for (let i = 0; i < data.length; i++) { %> 
 				<div class="random">
-				<article class="manga-container">
+				<article class="manga-container item <%= data[i].c[0]%> <%= data[i].c[1]%> <%= data[i].c[2]%>">
 					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
-					<a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a>
-					<div class="meta-container">
+					<!-- <a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a> -->
+					<!-- <div class="meta-container">
 						<ol>
 							<% for (let j = 0; j < data[i].c.length; j++) { %>
 								<li><%= data[i].c[j] %></li>
 							<% } %>
 						</ol>
-					</div>
+					</div> -->
 				</article>
 			</div>
 			<% } %>
