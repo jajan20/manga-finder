@@ -13,40 +13,107 @@
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'PT Sans', sans-serif;
+	scroll-behavior: smooth;
 }
 
+.manga {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.manga-container {
+	margin-right: 1rem;
+}
+
+.manga-cover {
+	width: 158px;
+	height: 240px;
+	object-fit: cover;
+}
 
 
 /*================
 === INDEX PAGE ===
 =================*/
 main {
-	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 1.5rem;
 }
 
-main h1 {
+#header-index h1 {
 	font-family: 'Anton', sans-serif;
+	color: #F44910;
+	font-size:3rem;
+}
+
+.search-text {
+	margin: 1rem 0 0 0;
+}
+
+.or-text {
+	font-family: 'Anton', sans-serif;
+	font-size:2.5rem;
+	color: #F44910;
+}
+
+.search-box {
+	margin-top:.5rem;
+	width: 40%;
+	padding: .5rem;
+	background-color: #FFFBF4;
+	border: solid 1px black;
+	color: black;
+	transition: all 150ms;
+}
+
+.search-box:focus {
+	outline: none;
+	width: 100%;
+	background-color: #FFFBF4;
+	border: solid 1px #F44910;
+	color: #F44910;
+}
+
+.search-box::placeholder {
+	color: black;
+	transition: all 150ms;
+}
+
+.search-box:focus::placeholder {
+	color: #F44910;
+}
+
+.index-container {
+	background-color: #FFFBF4;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.24);
+	padding: 1.5rem;
 }
 
 .index-btn-container {
 	display: flex;
-	flex-direction: column;
-	justify-content: start;
-	margin: 1rem;
 }
 
 .index-btn-container a {
+	display: block;
 	border: solid 1px #F44910;
-	width: 50vw;
-	margin: .5rem 0 0 0;
-	color: #F44910;
+	background-color: #F44910;
+	color: #FFFBF4;
 	text-decoration: none;
-	padding: .2rem;
+	margin: 1rem;
+	padding: 0.2rem;
+	transition: all 150ms;
 }
 
 .index-btn-container a:hover {
 	background-color: rgba(244, 73, 16, 0.6);
-	color: white;
+	transform: scale(1.05);
+}
+
+.index-btn-container a:focus {
+	transform: scale(1.05);
 }
 
 
@@ -54,22 +121,6 @@ main h1 {
 /*==================
 === AMATEUR PAGE ===
 ===================*/
-#amateur-main {
-
-}
-
-#amateur-main p {
-	margin-top: .5rem;
-}
-
-#amateur-content {
-	margin: 1rem;
-}
-
-#amateur-content article{
-	margin: 1rem 0 0 0;
-}
-
 .btn-container {
 	display: flex;
 	text-align: center;
@@ -88,17 +139,7 @@ main h1 {
 	color: white;
 }
 
-.manga {
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-}
-
-.manga img {
-	margin: 0.2rem;
-}
-
-.manga-container {
+/*.manga-container {
 	display: flex;
 	flex-direction: column;
 	overflow: hidden; 
@@ -106,6 +147,23 @@ main h1 {
 	opacity: 0;
 	transform: translateY(20px);
 
+}*/
+
+#history, #first-manga, #next {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	align-items: center;
+}
+
+#history h2, #first-manga h2, #next h2 {
+	font-family: 'Anton', sans-serif;
+	text-transform: uppercase;
+	margin-top:1rem;
+}
+
+#history p, #first-manga p, #next p {
+	margin:1rem 1.5rem 1rem 1.5rem;
 }
 
 .visible {
@@ -118,12 +176,7 @@ main h1 {
 	overflow: hidden;
 }
 
-#manga-cover {
-	width: 158px;
-	height: 240px;
-	object-fit: cover;
-	border: solid 1px black;
-}
+
 
 #amateur-footer {
 	width: 100%;
@@ -146,7 +199,6 @@ main h1 {
 #amateur-footer a:hover {
 	text-decoration: underline;
 }
-
 
 
 /*==============
@@ -194,25 +246,49 @@ nav {
 	background-color: #F44910;
 	width: 100%;
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
 	align-items: center;
-	height: 3rem;
+	height: 5rem;
 	color: white;
 	font-weight: 800;
 }
 
-header {
+nav h1 {
+	font-family: 'Anton', sans-serif;
+	font-size:3rem;
+	letter-spacing: .15rem;
+	margin: 0 0 0 1.5rem;
+	color: #FFFBF4;
+}
+
+#nav-container {
+	margin-left:1rem;
+}
+
+#nav-container a {
+	font-family: 'Anton', sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #2F2F2F;
+	letter-spacing:0.08rem;
+}
+
+#nav-container a:hover {
+	color: #FFFBF4;
+
+}
+
+#header {
 	display: flex;
-	justify-content: center;
+	justify-content: start;
 	align-items: center;
 	flex-wrap: wrap;
 	width: 100%;
 	background-color: #FFFBF4;
 	height:auto;
+	padding: 0 0 0 1rem;
 }
 
-header label {
+#header label {
 	display: block;
 	width:4.3rem;
 	text-align: center;
@@ -224,7 +300,7 @@ header label {
 	transition: all 150ms;
 }
 
-header label:hover, header label:focus {
+#header label:hover, header label:focus {
 	outline: none;
 	background-color: rgba(244, 73, 16, 0.6);
 	color: white;
@@ -239,6 +315,7 @@ header label:hover, header label:focus {
 
 [type="checkbox"] {
 	visibility: hidden;
+	position:fixed;
 }
 
 [type="checkbox"]:checked + label {
@@ -246,6 +323,72 @@ header label:hover, header label:focus {
 	color: white;
 	font-weight: 800;
 }
+
+/*=================
+=== ACTION PAGE ===
+==================*/
+#header-action, #header-crime, #header-scifi {
+	background-color: #F44910;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	height: 5rem;
+	color: white;
+	font-weight: 800;
+}
+
+#header-action h1, #header-crime h1, #header-scifi h1 {
+	font-family: 'Anton', sans-serif;
+	font-size:3rem;
+	letter-spacing: .15rem;
+	margin: 0 0 0 1.5rem;
+	color: #FFFBF4;
+}
+
+#action-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 1.5rem;
+}
+
+#action-container > div {
+	display: flex;
+	align-items: center;
+	padding: 1rem 0 1rem 0;
+}
+
+#action-container div > a {
+	display: block;
+	border: solid 1px #F44910;
+	color: #F44910;
+	text-decoration: none;
+	padding: .2rem;
+	margin-right: 1rem;
+}
+
+#action-container div > a:hover {
+	background-color: rgba(244, 73, 16, 0.6);
+	color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================
+== GLOBAL STYLING ==
+===================*/
+
 
 .item {
   display: none;

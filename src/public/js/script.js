@@ -41,7 +41,7 @@ if ('IntersectionObserver' in window) {
 (function() {
     // Items are in fact the results from the server, pushed into the DOM
     const items = Array.from(document.querySelectorAll('.item'))
-    let header = document.querySelector('header')
+    let header = document.querySelector('#header')
     let japGenre = document.querySelector('#jap-genre')
     let genres = ["Action", "Adventure", "Comedy", "Drama", "Fantasy", "Historical", "Horror", "Mystery", "Romance", "Sci-fi", "Sports"]
     let subGenres = ["Ecchi", "Harem", "Mecha", "Smut"]

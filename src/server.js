@@ -9,9 +9,8 @@ const app = express()
 const url = 'https://www.mangaeden.com/api/list/0/?p=1&l=5000'
 const allMangaUrl = 'https://www.mangaeden.com/api/list/0/?p=1&l=5000'
 
-// 'https://www.mangaeden.com/api/list/0/?p=1'
-// 'https://www.mangaeden.com/api/list/0/?p=1&l=5000'
-//'https://www.mangaeden.com/api/list/0/' Original link
+// const url = 'https://www.mangaeden.com/api/list/0/'
+// const allMangaUrl = 'https://www.mangaeden.com/api/list/0/'
 
 app.set('view engine', 'ejs')
 
@@ -39,7 +38,7 @@ app.use('/manga', express.static(__dirname + '/public'))
 	})
 })
 
-.get('/avatar', function(req, res) {
+.get('/action', function(req, res) {
 	request(allMangaUrl, { json: true }, function(err, response, data) {
 		if (err) {
 			console.log(err)
@@ -49,7 +48,7 @@ app.use('/manga', express.static(__dirname + '/public'))
 			let filterImg = avatarManga.filter(function(image) {
   				return image.im != null && image.c.length > 0 
 			}) 
-			res.render('pages/avatar', { data: filterImg })
+			res.render('pages/action', { data: filterImg })
 		}
 	})
 })
@@ -69,17 +68,17 @@ app.use('/manga', express.static(__dirname + '/public'))
 	})
 })
 
-.get('/western', function(req, res) {
+.get('/scifi', function(req, res) {
 	request(allMangaUrl, { json: true }, function(err, response, data) {
 		if (err) {
 			console.log(err)
 		} else {
-			let filterGenre = ['Sci-fi', 'Comedy', 'Adventure']
+			let filterGenre = ['Sci-fi', 'Mecha', 'Supernatural']
 			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
 			let filterImg = avatarManga.filter(function(image) {
   				return image.im != null && image.c.length > 0 
 			})
-			res.render('pages/western', { data: filterImg })
+			res.render('pages/scifi', { data: filterImg })
 		}
 	})
 })

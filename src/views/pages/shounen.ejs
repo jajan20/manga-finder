@@ -12,20 +12,25 @@
 	</head>
 	<body>
 		<nav>
-			<p>SHOUNEN</p>
+			<h1>SHOUNEN</h1>
+			<div id="nav-container">
+				<a href="/seinen">Seinen</a>
+				<a href="/shoujo">Shoujo</a>
+				<a href="/josei">Josei</a>
+			</div>
 		</nav>
-		<header>
+		<header id="header">
 		</header>
 		<section id="jap-genre">
 		</section>
 		<section>
-			<button id="genre-btn">Show me more Genre's</button>
+			<!-- <button id="genre-btn">Show me more Genre's</button> -->
 		</section>
 		<section class="manga">
 			<% for (let i = 0; i < data.length; i++) { %> 
 				<div class="random">
 				<article class="manga-container item <%= data[i].c[0]%> <%= data[i].c[1]%> <%= data[i].c[2]%>">
-					<img id="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
+					<img class="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
 					<!-- <a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a> -->
 					<!-- <div class="meta-container">
 						<ol>
