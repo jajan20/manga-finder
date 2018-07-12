@@ -17,6 +17,7 @@
 				<a href="/shounen">Shounen</a>
 				<a href="/seinen">Seinen</a>
 				<a href="/josei">Josei</a>
+				<a href="/">Go home</a>
 			</div>
 		</nav>
 		<header id="header">
@@ -24,23 +25,15 @@
 		<section>
 			<!-- <a href="">I want even more genre's!</a> -->
 		</section>
-		<section class="manga">
-			<% for (let i = 0; i < data.length; i++) { %> 
-				<div class="random">
-				<article class="manga-container item <%= data[i].c[0]%> <%= data[i].c[1]%> <%= data[i].c[2]%>">
-					<img class="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
-					<!-- <a href="<%= "manga/" + data[i].i %>"><%= data[i].t%></a> -->
-					<!-- <div class="meta-container">
-						<ol>
-							<% for (let j = 0; j < data[i].c.length; j++) { %>
-								<li><%= data[i].c[j] %></li>
-							<% } %>
-						</ol>
-					</div> -->
-				</article>
-			</div>
-			<% } %>
-		</section>
+		<section id="action-container">
+			<article class="manga">
+				<% for (let i = 0; i < data.length; i++) { %> 
+					<a href="<%= "manga/" + data[i].i %>" class="manga-container item <%= data[i].c[0]%> <%= data[i].c[1]%> <%= data[i].c[2]%>">
+						<img class="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
+					</a>
+				<% } %>
+			</article>
+			</section>
 	</body>
 	<script src="js/script.js"></script>
 </html>

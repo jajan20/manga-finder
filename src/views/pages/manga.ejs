@@ -11,13 +11,16 @@
 
 	</head>
 	<body>
-		<section class="">
+		<header id="header-action">
 			<h1><%= data.title %></h1>
+		</header>
+		<section class="content-container">
 			<img src="<%= "https://cdn.mangaeden.com/mangasimg/" + data.image %>">
 			<h2>Hits: <%= data.hits %></h2>
-			<span><strong>Last Chapter: </strong><%= data.last_chapter_date %></span><br>
-			<span><strong>Released: </strong><%= data.released %></span><br>
-			<span><strong>Status: </strong><%= data.status %></span><br>
+			<span><strong>Last Chapter: </strong><%= data.last_chapter_date %></span>
+			<span><strong>Released: </strong><%= data.released %></span>
+			<span><strong>Status: </strong><%= data.status %></span>
+			<a href="">Buy this Manga online</a>
 
 		</section>
 		<script src="js/script.js"></script>

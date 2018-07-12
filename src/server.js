@@ -83,6 +83,81 @@ app.use('/manga', express.static(__dirname + '/public'))
 	})
 })
 
+.get('/japanese', function(req, res) {
+	request(allMangaUrl, { json: true }, function(err, response, data) {
+		if (err) {
+			console.log(err)
+		} else {
+			let filterGenre = ['Slice of Life', 'Seinen', 'Historical']
+			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
+			let filterImg = avatarManga.filter(function(image) {
+  				return image.im != null && image.c.length > 0 
+			})
+			res.render('pages/japanese', { data: filterImg })
+		}
+	})
+})
+
+.get('/romance', function(req, res) {
+	request(allMangaUrl, { json: true }, function(err, response, data) {
+		if (err) {
+			console.log(err)
+		} else {
+			let filterGenre = ['Romance', 'Mature']
+			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
+			let filterImg = avatarManga.filter(function(image) {
+  				return image.im != null && image.c.length > 0 
+			})
+			res.render('pages/romance', { data: filterImg })
+		}
+	})
+})
+
+.get('/comedy', function(req, res) {
+	request(allMangaUrl, { json: true }, function(err, response, data) {
+		if (err) {
+			console.log(err)
+		} else {
+			let filterGenre = ['Comedy']
+			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
+			let filterImg = avatarManga.filter(function(image) {
+  				return image.im != null && image.c.length > 0 
+			})
+			res.render('pages/comedy', { data: filterImg })
+		}
+	})
+})
+
+.get('/everything', function(req, res) {
+	request(allMangaUrl, { json: true }, function(err, response, data) {
+		if (err) {
+			console.log(err)
+		} else {
+			let filterGenre = ['Shounen', 'Josei', 'Shoujo', 'Seinen']
+			let avatarManga = data.manga.filter(x => x.c.some(g => filterGenre.includes(g)))
+			let filterImg = avatarManga.filter(function(image) {
+  				return image.im != null && image.c.length > 0 
+			})
+			res.render('pages/everything', { data: filterImg })
+		}
+	})
+})
+
+.get('/horror', function(req, res) {
+	request(allMangaUrl, { json: true }, function(err, response, data) {
+		if (err) {
+			console.log(err)
+		} else {
+			let filterGenre = ['Horror']
+			let avatarManga = data.manga.filter(x => x.c.every(g => filterGenre.includes(g)))
+			let filterImg = avatarManga.filter(function(image) {
+  				return image.im != null && image.c.length > 0 
+			})
+			res.render('pages/horror', { data: filterImg })
+		}
+	})
+})
+
 .get('/pro', function(req, res) {
 	res.render('pages/pro')
 })
@@ -161,28 +236,5 @@ app.use('/manga', express.static(__dirname + '/public'))
 		})
 	})
 })
-
-// Experiment to include data inside a previous called request, didn't work
-
-// .get('/test', function(req, res) {
-// 	request(allMangaUrl, { json: true }, function(err, response, manga) {
-// 		// console.log(manga)
-// 		for (let i = 0; i < manga.manga.length; i++) {
-// 			let mangaID = manga.manga[i].i
-// 			let idURL = `https://www.mangaeden.com/api/manga/${mangaID}`
-// 			console.log(idURL)
-// 			request(idURL, { json: true }, function(err, response, data) {
-// 				if (err) {
-// 					console.log(err)
-// 				} else {
-// 				res.render('pages/test', { 
-// 						data: data,
-// 						manga: manga
-// 					})
-// 				}
-// 			})
-// 		}
-// 	})
-// })
 
 .listen(8080, console.log('listening on port 8080'))

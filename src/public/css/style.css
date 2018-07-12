@@ -22,13 +22,27 @@
 }
 
 .manga-container {
-	margin-right: 1rem;
+	filter: brightness(65%);
+	transition: all 150ms;
+	margin-right:1rem;
+}
+
+.manga-container:hover {
+	filter: none;
 }
 
 .manga-cover {
 	width: 158px;
 	height: 240px;
 	object-fit: cover;
+}
+
+.manga-container img {
+	position: relative;
+}
+
+.manga-container span {
+	position: absolute;
 }
 
 
@@ -126,7 +140,7 @@ main {
 	text-align: center;
 }
 
-.btn-container a {
+.btn-container a, .first-manga-btn {
 	border: solid 1px #F44910;
 	margin: .5rem .5rem 0 0;
 	color: #F44910;
@@ -134,35 +148,27 @@ main {
 	padding: .2rem;
 }
 
-.btn-container a:hover {
+.btn-container a:hover, .first-manga-btn:hover {
 	background-color: rgba(244, 73, 16, 0.6);
 	color: white;
 }
 
-/*.manga-container {
-	display: flex;
-	flex-direction: column;
-	overflow: hidden; 
-	transition: all 300ms;
-	opacity: 0;
-	transform: translateY(20px);
-
-}*/
-
-#history, #first-manga, #next {
+#history, #first-manga, #next, #last {
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
 	align-items: center;
+	min-width:60vw;
+	margin: auto;
 }
 
-#history h2, #first-manga h2, #next h2 {
+#history h2, #first-manga h2, #next h2, #last h2 {
 	font-family: 'Anton', sans-serif;
 	text-transform: uppercase;
 	margin-top:1rem;
 }
 
-#history p, #first-manga p, #next p {
+#history p, #first-manga p, #next p, #last p {
 	margin:1rem 1.5rem 1rem 1.5rem;
 }
 
@@ -176,17 +182,15 @@ main {
 	overflow: hidden;
 }
 
-
-
 #amateur-footer {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: fixed;
-	background-color: deepskyblue;
+	position: relative;
+	background-color: rgba(244, 73, 16, 0.8);
 	height: 3rem;
-	bottom: 0;
+	bottom: -29.2rem;
 	left: 0;
 	margin: 1rem 0 0 0;
 	box-shadow: 0px -15px 40px 10px #FFFFFF;
@@ -194,6 +198,8 @@ main {
 
 #amateur-footer a {
 	text-decoration: none;
+	color: #FFFBF4;
+	margin-right:2rem;
 }
 
 #amateur-footer a:hover {
@@ -260,6 +266,18 @@ nav h1 {
 	color: #FFFBF4;
 }
 
+nav a {
+	font-family: 'Anton', sans-serif;
+	text-transform: uppercase;
+	color: #2F2F2F;
+	margin-left: 1rem;
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: #FFFBF4;
+}
+
 #nav-container {
 	margin-left:1rem;
 }
@@ -293,7 +311,7 @@ nav h1 {
 	width:4.3rem;
 	text-align: center;
 	font-size: .8rem;
-	color: #F44910;
+	/*color: #F44910;*/
 	cursor: pointer;
 	box-shadow: inset 0px 0px 0px 1px #F44910;
 	margin: .5rem;
@@ -306,6 +324,7 @@ nav h1 {
 	color: white;
 	transform: scale(1.1);
 }
+
 
 #genre-btn {
 	border: solid 1px deepskyblue;
@@ -343,6 +362,19 @@ nav h1 {
 	letter-spacing: .15rem;
 	margin: 0 0 0 1.5rem;
 	color: #FFFBF4;
+	text-transform: uppercase;
+}
+
+#header-action  a, #header-crime  a, #header-scifi  a {
+	font-family: 'Anton', sans-serif;
+	text-transform: uppercase;
+	color: #2F2F2F;
+	margin-left: 1rem;
+	text-decoration: none;
+}
+
+#header-action  a:hover, #header-crime  a:hover, #header-scifi  a:hover {
+	color: #FFFBF4;
 }
 
 #action-container {
@@ -372,23 +404,23 @@ nav h1 {
 	color: white;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*==================
 == GLOBAL STYLING ==
 ===================*/
+.content-container {
+	display: flex;
+	flex-direction: column;
+	margin-left: 1.5rem;
+}
 
+.content-container img {
+	height: auto;
+	width: 30%;
+}
+
+.return-btn {
+	margin-left: 1.5rem;
+}
 
 .item {
   display: none;

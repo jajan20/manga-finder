@@ -10,8 +10,8 @@
 	<body>
 		<header id="header-crime">
 			<h1>CRIME & MINDGAMES</h1>
+			<a href="/noob">Go amateur</a>
 		</header>
-		<a href="/noob">Return</a>
 		<section id="action-container">
 			<p>Or maybe something like:</p>
 			<div>
@@ -20,23 +20,15 @@
 			</div>
 				<article class="manga">
 					<% for (let i = 0; i < data.length; i++) { %> 
-						<article class="manga-container">
+						<a href="<%= "manga/" + data[i].i %>" class="manga-container">
 							<img class="manga-cover" src="<%= "https://cdn.mangaeden.com/mangasimg/" + data[i].im %>">
-							<div class="meta-container">
-								<span class="manga-title"><%= data[i].t %></span>
-								<ol>
-									<% for (let j = 0; j < data[i].c.length; j++) { %>
-										<li><a href=""><%= data[i].c[j] %></a></li>
-									<% } %>
-								</ol>
-							</div>
-						</article>
+						</a>
 					<% } %>
 				</article>
-				<footer id="amateur-footer">
-					<a href="">Read these already or need something different?</a>
-				</footer>
-			<script src="js/script.js"></script>
 		</section>
+		<footer id="amateur-footer">
+			<a href="/everything">Show me everything</a>
+		</footer>
+		<script src="js/script.js"></script>
 	</body>
 </html>
